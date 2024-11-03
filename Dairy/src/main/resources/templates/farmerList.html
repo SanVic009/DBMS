@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Farmer List</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Farmer List</h1>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Farmer Name</th>
+                <th>Contact No</th>
+                <th>Address</th>
+                <th>No of Cows</th>
+                <th>Milk Production Capacity</th>
+                <th>Account No</th>
+                <th>Date of Joining</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Loop through the farmers list -->
+            <tr th:each="farmer : ${farmers}">
+                <td th:text="${farmer.Farmer_name}">Farmer Name</td>
+                <td th:text="${farmer.Contact_no}">Contact No</td>
+                <td th:text="${farmer.Address}">Address</td>
+                <td th:text="${farmer.no_of_cows}">No of Cows</td>
+                <td th:text="${farmer.Milk_production_capacity}">Milk Production Capacity</td>
+                <td th:text="${farmer.Account_no}">Account No</td>
+                <td th:text="${farmer.Date_of_joining}">Date of Joining</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2><a href="/">Back to Form</a></h2>
+</body>
+</html>

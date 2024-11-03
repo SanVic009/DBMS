@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Number of Cows</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h2>Find Farmers by Number of Cows</h2>
+    <form action="#" th:action="@{/farmersByCows}" method="post">
+        <label for="numberOfCows">Number of Cows:</label>
+        <input type="number" id="numberOfCows" name="numberOfCows" required>
+        <button type="submit">Search</button>
+    </form>
+
+    <h2><a href="/farmers">View All Farmers</a></h2>
+</body>
+</html>
