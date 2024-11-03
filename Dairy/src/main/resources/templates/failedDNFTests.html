@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Failed DNF Tests</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Failed DNF Tests</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Lab Report ID</th>
+                <th>District ID</th>
+                <th>Pathogen Test</th>
+                <th>Temperature Test</th>
+                <th>Fat Contents</th>
+                <th>Protein Test</th>
+                <th>Lactose Test</th>
+                <th>DNF Test</th>
+                <th>Milk Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="report : ${failedDNFTests}">
+                <td th:text="${report['Lab_report_id']}"></td>
+                <td th:text="${report['District_id']}"></td>
+                <td th:text="${report['Pathogen_test']}"></td>
+                <td th:text="${report['Temperature_test']}"></td>
+                <td th:text="${report['fat_contents']}"></td>
+                <td th:text="${report['Protein_test']}"></td>
+                <td th:text="${report['Lactose_test']}"></td>
+                <td th:text="${report['DNF_test']}"></td>
+                <td th:text="${report['Milk_type']}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
