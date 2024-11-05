@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Dashboard</title>
+    <link rel="stylesheet" th:href="@{/css/s3.css}"> 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+</head>
+<body>
+    <div class="farmer-dashboard">
+        <h2>Farmer Dashboard</h2>
+        
+        <div class="cattle-management">
+            <h3>Cattle Management</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Cattle ID</th>
+                        <th>Vaccination Status</th>
+                        <th>Age</th>
+                        <th>Milk Production (L)</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Vaccinated</td>
+                        <td>3</td>
+                        <td>15</td>
+                        <td>
+                            <button class="small-button">Edit</button>
+                            <button class="small-button">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Not Vaccinated</td>
+                        <td>2</td>
+                        <td>10</td>
+                        <td>
+                            <button class="small-button">Edit</button>
+                            <button class="small-button">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button>Add Cattle</button>
+        </div>
+
+        <div class="bubble-container">
+            <div class="milk-production-graph">
+                <h3>Milk Production Capacity (Last 3 Months)</h3>
+                <canvas id="milkProductionChart"></canvas>
+            </div>
+
+            <div class="gov-links">
+                <h3>Government Schemes</h3>
+                <ul>
+                    <li><a th:href="@{/scheme1}">Scheme 1</a></li>
+                    <li><a th:href="@{/scheme2}">Scheme 2</a></li>
+                    <li><a th:href="@{/scheme3}">Scheme 3</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="big-buttons">
+            <h3>Actions</h3>
+            <div class="button-row">
+                <button>Top 5 Farmers by Milk Production</button>
+                <button>Lab Reports by District</button>
+                <button>Total Milk Production (Farmer)</button>
+                <button>Top 5 Villages (Milk Production)</button>
+            </div>
+            <div class="button-row">
+                <button>Vaccination Status</button>
+                <button>Vaccination Scheduling</button>
+                <button>Process Payments</button>
+                <button>Update Subsidy Status</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('milkProductionChart').getContext('2d');
+        const milkProductionChart = new Chart(ctx, {
+            type: 'bar', 
+            data: {
+                labels: ['Month 1', 'Month 2', 'Month 3'], 
+                datasets: [{
+                    label: 'Milk Production (Liters)',
+                    data: [1200, 1500, 1300], 
+                    backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

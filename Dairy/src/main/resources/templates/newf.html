@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Farmer Registration</title>
+    <link rel="stylesheet" th:href="@{/css/s2.css}">
+</head>
+<body>
+    <div class="registration-container">
+        <h2>New Farmer Registration</h2>
+        
+        <!-- Use Thymeleaf form action for the Spring Controller -->
+        <form th:action="@{/submitRegistration}" method="post">
+            
+            <!-- Personal Information Section -->
+            <div class="form-section">
+                <h3>Personal Information</h3>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="contact">Contact Number</label>
+                <input type="text" id="contact" name="contact" required>
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="date_of_joining">Date of Joining</label>
+                <input type="date" id="date_of_joining" name="date_of_joining" required>
+
+                <label for="username">Select Username</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+
+                <label for="confirm_password">Confirm Password</label>
+                <input type="password" id="confirm_password" name="confirm_password" required>
+            </div>
+
+            <!-- Banking Details Section -->
+            <div class="form-section">
+                <h3>Banking Details</h3>
+                <label for="account_number">Account Number</label>
+                <input type="text" id="account_number" name="account_number" required>
+
+                <label for="bank_name">Bank Name</label>
+                <input type="text" id="bank_name" name="bank_name" required>
+
+                <label for="branch_name">Branch Name</label>
+                <input type="text" id="branch_name" name="branch_name" required>
+
+                <label for="ifsc_code">IFSC Code</label>
+                <input type="text" id="ifsc_code" name="ifsc_code" required>
+            </div>
+
+            <!-- Cattle Information Section -->
+            <div class="form-section">
+                <h3>Cattle Information</h3>
+                <label for="num_cows">Number of Cows</label>
+                <input type="number" id="num_cows" name="num_cows" required>
+
+                <label for="milk_capacity">Milk Production Capacity (liters/day)</label>
+                <input type="number" id="milk_capacity" name="milk_capacity" required>
+
+                <label for="other_cattle">Other Cattle Details</label>
+                <textarea id="other_cattle" name="other_cattle" rows="3" placeholder="Enter details of any other cattle (e.g., buffalo, goats)"></textarea>
+            </div>
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</body>
+</html>

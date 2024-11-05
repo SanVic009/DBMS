@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div class="container">
+        <div class="section farmer-section">
+            <h2>Farmers</h2>
+            <p></p>
+            <a th:href="@{/farmerlogin}"><button>Login as Farmer</button></a>
+        </div>
+        <div class="section employee-section">
+            <h2>Employees</h2>
+            <p></p>
+            <a th:href="@{/emplogin}"><button>Login as Employee</button></a>
+        </div>
+    </div>
+</body>
+</html>

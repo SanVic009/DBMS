@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #E6F0FA; 
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+    padding-top: 50px; 
+}
+
+.registration-container {
+    width: 600px; 
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: left; 
+}
+
+h2 {
+    color: #357ABD; 
+    margin-bottom: 20px;
+    text-align: center; 
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+h3 {
+    color: #285a8d;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+label {
+    text-align: left;
+    color: #333333;
+    font-weight: bold;
+    display: flex; 
+    justify-content: space-between; 
+}
+
+input, textarea {
+    padding: 10px; 
+    border: 1px solid #CCCCCC;
+    border-radius: 6px;
+    font-size: 0.9em; 
+    width: 90%; 
+}
+
+textarea {
+    resize: vertical;
+}
+
+.form-section {
+    padding: 10px;
+    border: 1px solid #CCCCCC;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background-color: #F9FBFD;
+    width: 100%; 
+}
+button {
+    padding: 10px;
+    font-size: 1em;
+    color: #ffffff;
+    background-color: #357ABD;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 90%; 
+}
+
+button:hover {
+    background-color: #285a8d;
+}
+

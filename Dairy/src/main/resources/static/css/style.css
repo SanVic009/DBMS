@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.farmer-section {
+    background-color: #4A90E2; 
+}
+
+.employee-section {
+    background-color: #357ABD; 
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 12px 24px;
+    font-size: 1em;
+    color: #ffffff;
+    background-color: #2D5A8E; 
+    border: none;
+    border-radius: 12px; 
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #1B3C66; 
+}

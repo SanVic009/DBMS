@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Dashboard</title>
+    <link rel="stylesheet" th:href="@{/css/s4.css}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="employee-dashboard">
+    <h2>Employee Dashboard</h2>
+
+    <!-- Farmers with No Milk Production in Last 12 Months -->
+    <div class="no-milk">
+        <h3>Farmers with No Milk Production in Last 12 Months</h3>
+        <ul>
+            <li th:each="farmer : ${noMilkFarmers}" th:text="${farmer}">Farmer Name</li>
+        </ul>
+    </div>
+
+    <!-- Farmers with Failed DNF Tests -->
+    <div class="failed-dnf">
+        <h3>Farmers with Failed DNF Tests</h3>
+        <ul>
+            <li th:each="farmer : ${failedDNFFarmers}" th:text="${farmer}">Farmer Name - DNF Test Failed</li>
+        </ul>
+    </div>
+
+    <!-- Statistics Section -->
+    <div class="stats-section">
+        <h3>Statistics</h3>
+        
+        <!-- Milk Production Over Last 12 Months -->
+        <div class="normal-graph">
+            <h4>Milk Production Over Last 12 Months</h4>
+            <canvas id="lineGraph"></canvas>
+        </div>
+
+        <!-- Top Farmers and Villages Milk Production -->
+        <div class="stats-graphs">
+            <div class="bar-graphs">
+                <h4>Top Farmers - Milk Production</h4>
+                <canvas id="barGraph1"></canvas>
+            </div>
+            <div class="bar-graphs">
+                <h4>Top Villages - Milk Production</h4>
+                <canvas id="barGraph2"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="big-buttons">
+        <div class="button-row">
+            <button>Top 5 Farmers in District</button>
+            <button>Top 5 Milk-Producing Villages</button>
+            <button>Failed DNF Lab Reports</button>
+            <button>District Lab Report</button>
+        </div>
+        <div class="button-row">
+            <button>Total Revenue from Milk Sales</button>
+            <button>Process Dairy Payments</button>
+            <button>Subsidy Status Update</button>
+            <button>Top 5 Villages Milk Production</button>
+        </div>
+    </div>
+</div>
+
+<!-- Chart Scripts -->
+<script>
+    const monthlyProductionData = /*[[${monthlyProductionData}]]*/ [500, 550, 600, 580, 620, 640, 670, 660, 700, 710, 730, 750];
+    const topFarmersData = /*[[${topFarmersData}]]*/ [1500, 1250, 1600, 1300, 1450];
+    const topVillagesData = /*[[${topVillagesData}]]*/ [3000, 2800, 3500, 3200, 3100];
+
+    const ctxLine = document.getElementById('lineGraph').getContext('2d');
+    new Chart(ctxLine, {
+        type: 'line',
+        data: {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            datasets: [{
+                label: 'Milk Production (liters)',
+                data: monthlyProductionData,
+                borderColor: '#357ABD',
+                backgroundColor: 'rgba(53, 122, 189, 0.2)',
+                fill: true
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                x: { title: { display: true, text: 'Months' } },
+                y: { title: { display: true, text: 'Liters Produced' } }
+            }
+        }
+    });
+
+    const ctxBar1 = document.getElementById('barGraph1').getContext('2d');
+    new Chart(ctxBar1, {
+        type: 'bar',
+        data: {
+            labels: ['Farmer A', 'Farmer B', 'Farmer C', 'Farmer D', 'Farmer E'],
+            datasets: [{
+                label: 'Milk Production (liters)',
+                data: topFarmersData,
+                backgroundColor: '#357ABD'
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                x: { title: { display: true, text: 'Farmers' } },
+                y: { title: { display: true, text: 'Liters Produced' } }
+            }
+        }
+    });
+
+    const ctxBar2 = document.getElementById('barGraph2').getContext('2d');
+    new Chart(ctxBar2, {
+        type: 'bar',
+        data: {
+            labels: ['Village X', 'Village Y', 'Village Z', 'Village W', 'Village Q'],
+            datasets: [{
+                label: 'Milk Production (liters)',
+                data: topVillagesData,
+                backgroundColor: '#285a8d'
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                x: { title: { display: true, text: 'Villages' } },
+                y: { title: { display: true, text: 'Liters Produced' } }
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

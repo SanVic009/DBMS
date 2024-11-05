@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #E6F0FA;
+}
+
+.farmer-dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    padding: 20px;
+}
+
+h2 {
+    color: #357ABD; 
+    margin-bottom: 20px;
+}
+
+.cattle-management {
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 15px;
+    width: 80%; 
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #357ABD;
+    color: white;
+}
+
+.small-button {
+    padding: 5px 10px; 
+    font-size: 0.9em; 
+    margin-right: 5px; 
+}
+
+.bubble-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; 
+    width: 80%; 
+    background-color: rgba(255, 255, 255, 0.8); 
+    border-radius: 10px; 
+    padding: 20px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    margin-top: 20px; 
+    position: relative; 
+}
+
+.bubble-container::after {
+    content: "";
+    position: absolute;
+    left: 50%; 
+    top: 0;
+    height: 100%;
+    width: 2px; 
+    background-color: #ddd; 
+    z-index: 1; 
+}
+
+.milk-production-graph, .gov-links {
+    width: 48%; 
+    position: relative; 
+    z-index: 0; 
+}
+
+.milk-production-graph canvas {
+    max-width: 100%; 
+    height: auto; 
+}
+
+.gov-links {
+    padding-left: 20px; 
+}
+
+.gov-links ul {
+    padding-left: 20px; 
+}
+
+h3 {
+    color: #285a8d;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px; 
+    font-size: 1em;
+    color: #ffffff;
+    background-color: #357ABD;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; 
+    margin: 10px 0; 
+}
+
+.big-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.button-row {
+    display: flex;
+    justify-content: space-between; 
+    width: 90%; 
+    margin: 10px 0; 
+}
+
+button {
+    flex: 1;
+    margin: 5px; 
+}
+
+ul {
+    list-style-type: none; 
+    padding: 0;
+}
+
+li {
+    margin: 5px 0; 
+}
